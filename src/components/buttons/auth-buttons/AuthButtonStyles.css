@@ -1,0 +1,33 @@
+.auth-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #5A7E96;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 125px 125px;
+    border-color: transparent transparent #061F2E transparent;
+    transition: border-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #9FC7E2;
+}
+
+.auth-button:hover::before {
+    border-color: transparent transparent #253B49 transparent;
+}

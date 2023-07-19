@@ -6,7 +6,7 @@ export default function AuthButton({
     text, toProp
 }) {
     return(
-        <Link to={toProp}>
+        <Link to={toProp} className="auth-button">
             {text}
         </Link>
     );
