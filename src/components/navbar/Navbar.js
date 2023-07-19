@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavbarStyles.css";
 import NavbarLinkButton from "../buttons/navbar-link-button/NavbarLinkButton";
+import AuthButton from "../buttons/auth-buttons/AuthButton";
 
 export default function Navbar() {
     return(
@@ -27,7 +28,14 @@ export default function Navbar() {
             </ul>   
             
             <div className="navbar__auth-buttons">
-
+                <AuthButton 
+                    text="Log In"
+                    toProp="/loginpage"
+                />
+                <AuthButton 
+                    text="Sign Up"
+                    toProp="/signuppage"
+                />
             </div>
         </nav>
     );
