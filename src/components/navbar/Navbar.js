@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavbarStyles.css";
-import { Link } from "react-router-dom";
+import NavbarLinkButton from "../buttons/navbar-link-button/NavbarLinkButton";
 
 export default function Navbar() {
     return(
@@ -12,7 +12,18 @@ export default function Navbar() {
             </div>
 
             <ul className="navbar__links"> 
-
+                <NavbarLinkButton 
+                    toProp="/"
+                    text="Home"
+                />
+                <NavbarLinkButton 
+                    toProp="/"
+                    text="Movies"
+                />
+                <NavbarLinkButton 
+                    toProp="/"
+                    text="TV Shows"
+                />
             </ul>   
             
             <div className="navbar__auth-buttons">
