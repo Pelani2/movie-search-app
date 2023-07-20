@@ -20,18 +20,18 @@ export default function SearchSection() {
             <h2 className="search-title">
                 Search for Movies
             </h2>
-            <div className="search-box">
-                <input 
-                    type="text"
-                    placeholder="Enter movie title here..."
-                    value={searchText}
-                    onChange={handleInputChange}
-                />
-                <SearchMovieButton 
-                    text="Search" 
-                    clickFunc={handleSearch}
-                />
-            </div>
+                <div className="search-box">
+                    <input 
+                        type="text"
+                        placeholder="Enter movie title here..."
+                        value={searchText}
+                        onChange={handleInputChange}
+                    />
+                    <SearchMovieButton 
+                        text="Search" 
+                        clickFunc={handleSearch}
+                    />
+                </div>
         </section>
     );
 }
