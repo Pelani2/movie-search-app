@@ -1,0 +1,24 @@
+.movie__details {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.movie__title {
+    font-size: 24px;
+    color: #253b49;
+}
+
+.movie__detail {
+    font-size: 16px;
+    color: #061f2e;
+    margin-bottom: 10px;
+}
+
+.movie__detail:last-child {
+    margin-bottom: 0;
+}

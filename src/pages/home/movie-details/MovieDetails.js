@@ -15,12 +15,14 @@ export default function MovieDetails() {
         axios.get(API_URL).then((response) => {
             setMovieData(response.data);
             setLoading(false);
+            console.log(response.data);
         })
         .catch((error) => {
             setError(error.message);
             setLoading(false);
         });
     }, []);
+    
 
     if (loading) {
         return(
@@ -46,19 +48,41 @@ export default function MovieDetails() {
         );
     }
 
+    const formatBudget = (budget) => {
+        return Number(budget).toLocaleString(undefined, {
+            style: "currency",
+            currency: "USD"
+        });
+    };
+
     return(
-        <div className="movie-detils">
-            <h2>
+        <div className="movie__details">
+            <h2 className="movie__title">
                 {movieData.title}
             </h2>
-            <p>
+            <p className="movie__detail">
+                {movieData.tagline}
+            </p>
+            <p className="movie__detail">
+                Genres: {movieData.genres.length > 0 ? movieData.genres.map((genre) => genre.name).join(", ") : "N/A"}
+            </p>
+            <p className="movie__detail">
                 {movieData.overview}
             </p>
-            <p>
+            <p className="movie__detail">
                 Release date: {movieData.release_date}
             </p>
-            <p>
+            <p className="movie__detail">
                 Rating: {movieData.vote_average}
+            </p>
+            <p className="movie__detail">
+                Budget: {formatBudget(movieData.budget)}
+            </p>
+            <p className="movie__detail">
+                Language: {movieData.spoken_languages.length > 0 ? movieData.spoken_languages.map((language) => language.name).join(", ") : "N/A"}
+            </p>
+            <p className="movie__detail">
+                Production by: {movieData.production_companies.length > 0 ? movieData.production_companies.map((company) => company.name).join(", ") : "N/A"}
             </p>
         </div>
     );
