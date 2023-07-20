@@ -1,0 +1,41 @@
+.movie-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.movie-search-container {
+    max-height: 20vh;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.search-results {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.search-results ul {
+    list-style-type: none;
+}
+
+.dropped-movie {
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    color: #061f2e;
+    margin-bottom: 8px;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.dropped-movie:hover {
+    background-color: #9fc7e2;
+    color: #253b49;
+}
