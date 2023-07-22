@@ -12,6 +12,8 @@ export default function SearchSection() {
     const [searchText, setSearchText] = useState("");
     const [searchResults, setSearchResults] = useState([]);
 
+    
+
     const handleSearch = () => {
         if (searchText.trim() === "") {
             setSearchResults([]);
@@ -60,7 +62,7 @@ export default function SearchSection() {
                                         <Link 
                                             key={movie.id}
                                             className="dropped-movie"
-                                            to="/moviedetails"
+                                            to={`/moviedetails/${movie.id}`}
                                         >
                                             {movie.title}
                                         </Link>

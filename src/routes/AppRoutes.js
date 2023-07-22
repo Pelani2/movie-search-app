@@ -8,7 +8,7 @@ const AppRoutes = createBrowserRouter([
         element: <Home />
     },
     {
-        path: "/moviedetails",
+        path: "/moviedetails/:movieId",
         element: <MovieDetails />
     }
 ]);
