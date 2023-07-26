@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./FeaturedMoviesStyles.scss";
 import axios from "axios";
+import "./FeaturedMoviesStyles.scss";
 
 export default function FeaturedMovies() {
     const [featuredMovies, setFeaturedMovies] = useState([]);
+    const [activeIndex, setActiveIndex] = useState(0);
 
    useEffect(() => {
         const fetchFeaturedMovies = async () => {
@@ -19,12 +20,29 @@ export default function FeaturedMovies() {
         };
         fetchFeaturedMovies();
    }, []);
+
+   useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((prevIndex) => (prevIndex + 1) % featuredMovies.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+   }, [featuredMovies]);
     
     return(
         <section className="featured-movies">
-            <div className="featured-movies__container">
-                {featuredMovies.map((movie) => (
-                    <div key={movie.id} className="featured-movies__item">
+            <div 
+                className="featured-movies__container"
+                style={{
+                    transform: `translateX(-${activeIndex * 100}%)`,
+                    width: `${featuredMovies.length * 100}%`
+                }}
+            >
+                {featuredMovies.map((movie, index) => (
+                    <div
+                        key={movie.id}
+                        className={`featured-movies__item${index === activeIndex ? " active" : ""}`}
+                    >
                         <h2 className="featured-movies__title">
                             {movie.title}
                         </h2>

@@ -1,0 +1,47 @@
+.featured-movies {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    .featured-movies__container {
+        display: flex;
+        transition: transform 0.5s ease;
+        margin: 0 auto;
+    }
+
+    .featured-movies__item {
+        flex: 0 0 100%;
+        padding: 0 10px;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+
+        &.active {
+            opacity: 1;
+        }
+
+        h2, p {
+            color: #fff;
+            margin: 0;
+        }
+
+        .featured-movies__title {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .featured-movies__overview {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .featured-movies__poster {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-top: 10px;
+            width: 300px;
+            height: 500px;
+        }
+    }
+}
