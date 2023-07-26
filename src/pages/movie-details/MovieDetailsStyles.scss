@@ -1,0 +1,40 @@
+$primaryColor: #007bff;
+$fontSizeLarge: 2rem;
+
+.movie__details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+
+    .movie__details {
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 90%;
+        height: 90vh;
+
+        .movie__title {
+            font-size: $fontSizeLarge;
+            color: $primaryColor;
+        }
+
+        .movie__overview {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .movie__poster {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            height: 90vh;
+            object-fit: cover;
+        }
+    }
+}  

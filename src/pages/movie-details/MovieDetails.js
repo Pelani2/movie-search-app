@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./MovieDetailsStyles.css";
+import "./MovieDetailsStyles.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-export default function MovieDetails(props) {
+export default function MovieDetails() {
     const API_KEY = "4737e7948022809d14a75ad5e7df82c1";
     const API_URL = "https://api.themoviedb.org/3/movie/";
 
@@ -41,20 +41,22 @@ export default function MovieDetails(props) {
     }
 
     return(
-        <div className="movie__details">
-            <h2 className="movie__title">
-                {movieData.title}
-            </h2>
-            <p className="movie__overview">
-                {movieData.overview}
-            </p>
-            {movieData.poster_path && (
-                <img 
-                    src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
-                    alt={movieData.title}
-                    className="movie__poster"
-                />
-            )}
-        </div>
+        <div className="movie__details-container">
+            <div className="movie__details">
+                <h2 className="movie__title">
+                    {movieData.title}
+                </h2>
+                <p className="movie__overview">
+                    {movieData.overview}
+                </p>
+                {movieData.poster_path && (
+                    <img 
+                        src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
+                        alt={movieData.title}
+                        className="movie__poster"
+                    />
+                )}
+            </div>
+        </div>  
     );
 }
